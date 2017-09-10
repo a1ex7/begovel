@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG &lt;view&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		<style>i{text-indent:200%;white-space:nowrap;overflow:hidden;display:inline-block}</style>
+
+<!--
+	
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite. 
+
+-->
+
+<style type="text/css">
+.svg-arrow-left {
+	background: url("sprite.svg") 0 0 no-repeat;
+	width: 9px;
+	height: 13px;
+}
+.svg-arrow-right {
+	background: url("sprite.svg") 0.6202618883528601% 1.036682615629984% no-repeat;
+	width: 9px;
+	height: 13px;
+}
+.svg-arrow-up {
+	background: url("sprite.svg") 1.2422360248447204% 2.0816653322658127% no-repeat;
+	width: 11px;
+	height: 18px;
+}
+.svg-award {
+	background: url("sprite.svg") 2.0743919885550786% 3.61544782251438% no-repeat;
+	width: 62px;
+	height: 50px;
+}
+.svg-baby-carriage {
+	background: url("sprite.svg") 6.45848119233499% 7.730263157894737% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-bicycle {
+	background: url("sprite.svg") 10.078069552874378% 11.924342105263158% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-bookmark {
+	background: url("sprite.svg") 13.562895291637385% 15.986949429037521% no-repeat;
+	width: 37px;
+	height: 41px;
+}
+.svg-call-center-boy {
+	background: url("sprite.svg") 16.20859760394644% 19.506172839506174% no-repeat;
+	width: 41px;
+	height: 52px;
+}
+.svg-capa {
+	background: url("sprite.svg") 18.964310706787963% 23.40080971659919% no-repeat;
+	width: 31px;
+	height: 32px;
+}
+.svg-copygukov {
+	background: url("sprite.svg") 24.23756019261637% 25.845410628019323% no-repeat;
+	width: 214px;
+	height: 25px;
+}
+.svg-cycle {
+	background: url("sprite.svg") 36.62171753016324% 28.45394736842105% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-delivery-man {
+	background: url("sprite.svg") 40.155807365439095% 32.56767842493847% no-repeat;
+	width: 48px;
+	height: 48px;
+}
+.svg-facebook {
+	background: url("sprite.svg") 42.472375690607734% 35.80048270313757% no-repeat;
+	width: 12px;
+	height: 24px;
+}
+.svg-google-plus {
+	background: url("sprite.svg") 43.72384937238494% 37.52% no-repeat;
+	width: 26px;
+	height: 17px;
+}
+.svg-helmet {
+	background: url("sprite.svg") 46.344925479063164% 39.9671052631579% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-instagram {
+	background: url("sprite.svg") 49.47294448348559% 43.65853658536585% no-repeat;
+	width: 37px;
+	height: 37px;
+}
+.svg-kick-scooter {
+	background: url("sprite.svg") 52.59048970901348% 47.203947368421055% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-lock {
+	background: url("sprite.svg") 54.62068965517241% 49.92012779552716% no-repeat;
+	width: 10px;
+	height: 15px;
+}
+.svg-logo {
+	background: url("sprite.svg") 57.57358219669778% 52.545155993431855% no-repeat;
+	width: 67px;
+	height: 49px;
+}
+.svg-percentage {
+	background: url("sprite.svg") 61.806543385490755% 56.70781893004115% no-repeat;
+	width: 54px;
+	height: 52px;
+}
+.svg-phone {
+	background: url("sprite.svg") 64.954257565095% 60.19496344435419% no-repeat;
+	width: 39px;
+	height: 36px;
+}
+.svg-price-tag {
+	background: url("sprite.svg") 68.50583225328643% 64.13960476135443% no-repeat;
+	width: 55.74px;
+	height: 55.58px;
+}
+.svg-search {
+	background: url("sprite.svg") 71.38849929873773% 67.61363636363636% no-repeat;
+	width: 34px;
+	height: 35px;
+}
+.svg-settings {
+	background: url("sprite.svg") 74.87544483985765% 71.55812036273701% no-repeat;
+	width: 55px;
+	height: 54px;
+}
+.svg-skateboard {
+	background: url("sprite.svg") 78.56635911994323% 75.82236842105263% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-sled {
+	background: url("sprite.svg") 82.18594748048261% 80.01644736842105% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-special {
+	background: url("sprite.svg") 84.60461861441567% 82.98217179902755% no-repeat;
+	width: 31px;
+	height: 33px;
+}
+.svg-star {
+	background: url("sprite.svg") 85.93208593208593% 84.49240607513988% no-repeat;
+	width: 17px;
+	height: 16px;
+}
+.svg-tag {
+	background: url("sprite.svg") 87.53481894150418% 86.2540192926045% no-repeat;
+	width: 24px;
+	height: 23px;
+}
+.svg-thumb {
+	background: url("sprite.svg") 88.52798894263995% 87.33067729083665% no-repeat;
+	width: 13px;
+	height: 12px;
+}
+.svg-thumbs-up {
+	background: url("sprite.svg") 90.74333800841515% 90.15459723352319% no-repeat;
+	width: 34px;
+	height: 38px;
+}
+.svg-tricycle {
+	background: url("sprite.svg") 94.25124201561391% 94.24342105263158% no-repeat;
+	width: 51px;
+	height: 51px;
+}
+.svg-trolley {
+	background: url("sprite.svg") 96.90794096978215% 96.84466019417475% no-repeat;
+	width: 37px;
+	height: 31px;
+}
+.svg-twitter {
+	background: url("sprite.svg") 98.47009735744089% 98.31865492393915% no-repeat;
+	width: 22px;
+	height: 18px;
+}
+.svg-user {
+	background: url("sprite.svg") 100% 100% no-repeat;
+	width: 22px;
+	height: 21px;
+}
+</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+If you use the sprite in conjunction with the pre-defined views (respectively fragment identifiers),
+you will need to set the shape dimensions via CSS unless you want them to become a huge 100% in
+size. You may use the following CSS classes for doing so. They might well be outsourced to an
+external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-arrow-left-dims { width: 9px; height: 13px; }
+	.svg-arrow-right-dims { width: 9px; height: 13px; }
+	.svg-arrow-up-dims { width: 11px; height: 18px; }
+	.svg-award-dims { width: 62px; height: 50px; }
+	.svg-baby-carriage-dims { width: 51px; height: 51px; }
+	.svg-bicycle-dims { width: 51px; height: 51px; }
+	.svg-bookmark-dims { width: 37px; height: 41px; }
+	.svg-call-center-boy-dims { width: 41px; height: 52px; }
+	.svg-capa-dims { width: 31px; height: 32px; }
+	.svg-copygukov-dims { width: 214px; height: 25px; }
+	.svg-cycle-dims { width: 51px; height: 51px; }
+	.svg-delivery-man-dims { width: 48px; height: 48px; }
+	.svg-facebook-dims { width: 12px; height: 24px; }
+	.svg-google-plus-dims { width: 26px; height: 17px; }
+	.svg-helmet-dims { width: 51px; height: 51px; }
+	.svg-instagram-dims { width: 37px; height: 37px; }
+	.svg-kick-scooter-dims { width: 51px; height: 51px; }
+	.svg-lock-dims { width: 10px; height: 15px; }
+	.svg-logo-dims { width: 67px; height: 49px; }
+	.svg-percentage-dims { width: 54px; height: 52px; }
+	.svg-phone-dims { width: 39px; height: 36px; }
+	.svg-price-tag-dims { width: 55.74px; height: 55.58px; }
+	.svg-search-dims { width: 34px; height: 35px; }
+	.svg-settings-dims { width: 55px; height: 54px; }
+	.svg-skateboard-dims { width: 51px; height: 51px; }
+	.svg-sled-dims { width: 51px; height: 51px; }
+	.svg-special-dims { width: 31px; height: 33px; }
+	.svg-star-dims { width: 17px; height: 16px; }
+	.svg-tag-dims { width: 24px; height: 23px; }
+	.svg-thumb-dims { width: 13px; height: 12px; }
+	.svg-thumbs-up-dims { width: 34px; height: 38px; }
+	.svg-tricycle-dims { width: 51px; height: 51px; }
+	.svg-trolley-dims { width: 37px; height: 31px; }
+	.svg-twitter-dims { width: 22px; height: 18px; }
+	.svg-user-dims { width: 22px; height: 21px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG <code>&lt;view&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite. Please have a look at the HTML source for further details and be aware of the following constraints regarding the prepared <code>&lt;view&gt;</code> elements (technique B):</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you might have to use a prolyfill (if available?).</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+
+-->
+
+			<h3>A) Conventional CSS sprite</h3>
+			<ul>
+				
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<i class="svg-arrow-left">arrow-left</i>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<i class="svg-arrow-right">arrow-right</i>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="arrow-up">
+					<div class="icon-box">
+						
+						<!-- arrow-up -->
+						<i class="svg-arrow-up">arrow-up</i>
+						
+					</div>
+					<h2>arrow-up</h2>
+				</li>
+				<li title="award">
+					<div class="icon-box">
+						
+						<!-- award -->
+						<i class="svg-award">award</i>
+						
+					</div>
+					<h2>award</h2>
+				</li>
+				<li title="baby-carriage">
+					<div class="icon-box">
+						
+						<!-- baby-carriage -->
+						<i class="svg-baby-carriage">baby-carriage</i>
+						
+					</div>
+					<h2>baby-carriage</h2>
+				</li>
+				<li title="bicycle">
+					<div class="icon-box">
+						
+						<!-- bicycle -->
+						<i class="svg-bicycle">bicycle</i>
+						
+					</div>
+					<h2>bicycle</h2>
+				</li>
+				<li title="bookmark">
+					<div class="icon-box">
+						
+						<!-- bookmark -->
+						<i class="svg-bookmark">bookmark</i>
+						
+					</div>
+					<h2>bookmark</h2>
+				</li>
+				<li title="call-center-boy">
+					<div class="icon-box">
+						
+						<!-- call-center-boy -->
+						<i class="svg-call-center-boy">call-center-boy</i>
+						
+					</div>
+					<h2>call-center-boy</h2>
+				</li>
+				<li title="capa">
+					<div class="icon-box">
+						
+						<!-- capa -->
+						<i class="svg-capa">capa</i>
+						
+					</div>
+					<h2>capa</h2>
+				</li>
+				<li title="copygukov">
+					<div class="icon-box">
+						
+						<!-- copygukov -->
+						<i class="svg-copygukov">copygukov</i>
+						
+					</div>
+					<h2>copygukov</h2>
+				</li>
+				<li title="cycle">
+					<div class="icon-box">
+						
+						<!-- cycle -->
+						<i class="svg-cycle">cycle</i>
+						
+					</div>
+					<h2>cycle</h2>
+				</li>
+				<li title="delivery-man">
+					<div class="icon-box">
+						
+						<!-- delivery-man -->
+						<i class="svg-delivery-man">delivery-man</i>
+						
+					</div>
+					<h2>delivery-man</h2>
+				</li>
+				<li title="facebook">
+					<div class="icon-box">
+						
+						<!-- facebook -->
+						<i class="svg-facebook">facebook</i>
+						
+					</div>
+					<h2>facebook</h2>
+				</li>
+				<li title="google-plus">
+					<div class="icon-box">
+						
+						<!-- google-plus -->
+						<i class="svg-google-plus">google-plus</i>
+						
+					</div>
+					<h2>google-plus</h2>
+				</li>
+				<li title="helmet">
+					<div class="icon-box">
+						
+						<!-- helmet -->
+						<i class="svg-helmet">helmet</i>
+						
+					</div>
+					<h2>helmet</h2>
+				</li>
+				<li title="instagram">
+					<div class="icon-box">
+						
+						<!-- instagram -->
+						<i class="svg-instagram">instagram</i>
+						
+					</div>
+					<h2>instagram</h2>
+				</li>
+				<li title="kick-scooter">
+					<div class="icon-box">
+						
+						<!-- kick-scooter -->
+						<i class="svg-kick-scooter">kick-scooter</i>
+						
+					</div>
+					<h2>kick-scooter</h2>
+				</li>
+				<li title="lock">
+					<div class="icon-box">
+						
+						<!-- lock -->
+						<i class="svg-lock">lock</i>
+						
+					</div>
+					<h2>lock</h2>
+				</li>
+				<li title="logo">
+					<div class="icon-box">
+						
+						<!-- logo -->
+						<i class="svg-logo">logo</i>
+						
+					</div>
+					<h2>logo</h2>
+				</li>
+				<li title="percentage">
+					<div class="icon-box">
+						
+						<!-- percentage -->
+						<i class="svg-percentage">percentage</i>
+						
+					</div>
+					<h2>percentage</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+						
+						<!-- phone -->
+						<i class="svg-phone">phone</i>
+						
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="price-tag">
+					<div class="icon-box">
+						
+						<!-- price-tag -->
+						<i class="svg-price-tag">price-tag</i>
+						
+					</div>
+					<h2>price-tag</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+						
+						<!-- search -->
+						<i class="svg-search">search</i>
+						
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="settings">
+					<div class="icon-box">
+						
+						<!-- settings -->
+						<i class="svg-settings">settings</i>
+						
+					</div>
+					<h2>settings</h2>
+				</li>
+				<li title="skateboard">
+					<div class="icon-box">
+						
+						<!-- skateboard -->
+						<i class="svg-skateboard">skateboard</i>
+						
+					</div>
+					<h2>skateboard</h2>
+				</li>
+				<li title="sled">
+					<div class="icon-box">
+						
+						<!-- sled -->
+						<i class="svg-sled">sled</i>
+						
+					</div>
+					<h2>sled</h2>
+				</li>
+				<li title="special">
+					<div class="icon-box">
+						
+						<!-- special -->
+						<i class="svg-special">special</i>
+						
+					</div>
+					<h2>special</h2>
+				</li>
+				<li title="star">
+					<div class="icon-box">
+						
+						<!-- star -->
+						<i class="svg-star">star</i>
+						
+					</div>
+					<h2>star</h2>
+				</li>
+				<li title="tag">
+					<div class="icon-box">
+						
+						<!-- tag -->
+						<i class="svg-tag">tag</i>
+						
+					</div>
+					<h2>tag</h2>
+				</li>
+				<li title="thumb">
+					<div class="icon-box">
+						
+						<!-- thumb -->
+						<i class="svg-thumb">thumb</i>
+						
+					</div>
+					<h2>thumb</h2>
+				</li>
+				<li title="thumbs-up">
+					<div class="icon-box">
+						
+						<!-- thumbs-up -->
+						<i class="svg-thumbs-up">thumbs-up</i>
+						
+					</div>
+					<h2>thumbs-up</h2>
+				</li>
+				<li title="tricycle">
+					<div class="icon-box">
+						
+						<!-- tricycle -->
+						<i class="svg-tricycle">tricycle</i>
+						
+					</div>
+					<h2>tricycle</h2>
+				</li>
+				<li title="trolley">
+					<div class="icon-box">
+						
+						<!-- trolley -->
+						<i class="svg-trolley">trolley</i>
+						
+					</div>
+					<h2>trolley</h2>
+				</li>
+				<li title="twitter">
+					<div class="icon-box">
+						
+						<!-- twitter -->
+						<i class="svg-twitter">twitter</i>
+						
+					</div>
+					<h2>twitter</h2>
+				</li>
+				<li title="user">
+					<div class="icon-box">
+						
+						<!-- user -->
+						<i class="svg-user">user</i>
+						
+					</div>
+					<h2>user</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) External sprite with pre-defined views referenced by fragment identifiers
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are referencing the <view> elements
+pre-defined in the external sprite.
+
+-->
+
+			<h3>B) External sprite with pre-defined views referenced by fragment identifiers</h3>
+			<ul>
+				
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<img src="sprite.svg#arrow-left" class="svg-arrow-left-dims" alt="arrow-left"/>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<img src="sprite.svg#arrow-right" class="svg-arrow-right-dims" alt="arrow-right"/>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="arrow-up">
+					<div class="icon-box">
+						
+						<!-- arrow-up -->
+						<img src="sprite.svg#arrow-up" class="svg-arrow-up-dims" alt="arrow-up"/>
+						
+					</div>
+					<h2>arrow-up</h2>
+				</li>
+				<li title="award">
+					<div class="icon-box">
+						
+						<!-- award -->
+						<img src="sprite.svg#award" class="svg-award-dims" alt="award"/>
+						
+					</div>
+					<h2>award</h2>
+				</li>
+				<li title="baby-carriage">
+					<div class="icon-box">
+						
+						<!-- baby-carriage -->
+						<img src="sprite.svg#baby-carriage" class="svg-baby-carriage-dims" alt="baby-carriage"/>
+						
+					</div>
+					<h2>baby-carriage</h2>
+				</li>
+				<li title="bicycle">
+					<div class="icon-box">
+						
+						<!-- bicycle -->
+						<img src="sprite.svg#bicycle" class="svg-bicycle-dims" alt="bicycle"/>
+						
+					</div>
+					<h2>bicycle</h2>
+				</li>
+				<li title="bookmark">
+					<div class="icon-box">
+						
+						<!-- bookmark -->
+						<img src="sprite.svg#bookmark" class="svg-bookmark-dims" alt="bookmark"/>
+						
+					</div>
+					<h2>bookmark</h2>
+				</li>
+				<li title="call-center-boy">
+					<div class="icon-box">
+						
+						<!-- call-center-boy -->
+						<img src="sprite.svg#call-center-boy" class="svg-call-center-boy-dims" alt="call-center-boy"/>
+						
+					</div>
+					<h2>call-center-boy</h2>
+				</li>
+				<li title="capa">
+					<div class="icon-box">
+						
+						<!-- capa -->
+						<img src="sprite.svg#capa" class="svg-capa-dims" alt="capa"/>
+						
+					</div>
+					<h2>capa</h2>
+				</li>
+				<li title="copygukov">
+					<div class="icon-box">
+						
+						<!-- copygukov -->
+						<img src="sprite.svg#copygukov" class="svg-copygukov-dims" alt="copygukov"/>
+						
+					</div>
+					<h2>copygukov</h2>
+				</li>
+				<li title="cycle">
+					<div class="icon-box">
+						
+						<!-- cycle -->
+						<img src="sprite.svg#cycle" class="svg-cycle-dims" alt="cycle"/>
+						
+					</div>
+					<h2>cycle</h2>
+				</li>
+				<li title="delivery-man">
+					<div class="icon-box">
+						
+						<!-- delivery-man -->
+						<img src="sprite.svg#delivery-man" class="svg-delivery-man-dims" alt="delivery-man"/>
+						
+					</div>
+					<h2>delivery-man</h2>
+				</li>
+				<li title="facebook">
+					<div class="icon-box">
+						
+						<!-- facebook -->
+						<img src="sprite.svg#facebook" class="svg-facebook-dims" alt="facebook"/>
+						
+					</div>
+					<h2>facebook</h2>
+				</li>
+				<li title="google-plus">
+					<div class="icon-box">
+						
+						<!-- google-plus -->
+						<img src="sprite.svg#google-plus" class="svg-google-plus-dims" alt="google-plus"/>
+						
+					</div>
+					<h2>google-plus</h2>
+				</li>
+				<li title="helmet">
+					<div class="icon-box">
+						
+						<!-- helmet -->
+						<img src="sprite.svg#helmet" class="svg-helmet-dims" alt="helmet"/>
+						
+					</div>
+					<h2>helmet</h2>
+				</li>
+				<li title="instagram">
+					<div class="icon-box">
+						
+						<!-- instagram -->
+						<img src="sprite.svg#instagram" class="svg-instagram-dims" alt="instagram"/>
+						
+					</div>
+					<h2>instagram</h2>
+				</li>
+				<li title="kick-scooter">
+					<div class="icon-box">
+						
+						<!-- kick-scooter -->
+						<img src="sprite.svg#kick-scooter" class="svg-kick-scooter-dims" alt="kick-scooter"/>
+						
+					</div>
+					<h2>kick-scooter</h2>
+				</li>
+				<li title="lock">
+					<div class="icon-box">
+						
+						<!-- lock -->
+						<img src="sprite.svg#lock" class="svg-lock-dims" alt="lock"/>
+						
+					</div>
+					<h2>lock</h2>
+				</li>
+				<li title="logo">
+					<div class="icon-box">
+						
+						<!-- logo -->
+						<img src="sprite.svg#logo" class="svg-logo-dims" alt="logo"/>
+						
+					</div>
+					<h2>logo</h2>
+				</li>
+				<li title="percentage">
+					<div class="icon-box">
+						
+						<!-- percentage -->
+						<img src="sprite.svg#percentage" class="svg-percentage-dims" alt="percentage"/>
+						
+					</div>
+					<h2>percentage</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+						
+						<!-- phone -->
+						<img src="sprite.svg#phone" class="svg-phone-dims" alt="phone"/>
+						
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="price-tag">
+					<div class="icon-box">
+						
+						<!-- price-tag -->
+						<img src="sprite.svg#price-tag" class="svg-price-tag-dims" alt="price-tag"/>
+						
+					</div>
+					<h2>price-tag</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+						
+						<!-- search -->
+						<img src="sprite.svg#search" class="svg-search-dims" alt="search"/>
+						
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="settings">
+					<div class="icon-box">
+						
+						<!-- settings -->
+						<img src="sprite.svg#settings" class="svg-settings-dims" alt="settings"/>
+						
+					</div>
+					<h2>settings</h2>
+				</li>
+				<li title="skateboard">
+					<div class="icon-box">
+						
+						<!-- skateboard -->
+						<img src="sprite.svg#skateboard" class="svg-skateboard-dims" alt="skateboard"/>
+						
+					</div>
+					<h2>skateboard</h2>
+				</li>
+				<li title="sled">
+					<div class="icon-box">
+						
+						<!-- sled -->
+						<img src="sprite.svg#sled" class="svg-sled-dims" alt="sled"/>
+						
+					</div>
+					<h2>sled</h2>
+				</li>
+				<li title="special">
+					<div class="icon-box">
+						
+						<!-- special -->
+						<img src="sprite.svg#special" class="svg-special-dims" alt="special"/>
+						
+					</div>
+					<h2>special</h2>
+				</li>
+				<li title="star">
+					<div class="icon-box">
+						
+						<!-- star -->
+						<img src="sprite.svg#star" class="svg-star-dims" alt="star"/>
+						
+					</div>
+					<h2>star</h2>
+				</li>
+				<li title="tag">
+					<div class="icon-box">
+						
+						<!-- tag -->
+						<img src="sprite.svg#tag" class="svg-tag-dims" alt="tag"/>
+						
+					</div>
+					<h2>tag</h2>
+				</li>
+				<li title="thumb">
+					<div class="icon-box">
+						
+						<!-- thumb -->
+						<img src="sprite.svg#thumb" class="svg-thumb-dims" alt="thumb"/>
+						
+					</div>
+					<h2>thumb</h2>
+				</li>
+				<li title="thumbs-up">
+					<div class="icon-box">
+						
+						<!-- thumbs-up -->
+						<img src="sprite.svg#thumbs-up" class="svg-thumbs-up-dims" alt="thumbs-up"/>
+						
+					</div>
+					<h2>thumbs-up</h2>
+				</li>
+				<li title="tricycle">
+					<div class="icon-box">
+						
+						<!-- tricycle -->
+						<img src="sprite.svg#tricycle" class="svg-tricycle-dims" alt="tricycle"/>
+						
+					</div>
+					<h2>tricycle</h2>
+				</li>
+				<li title="trolley">
+					<div class="icon-box">
+						
+						<!-- trolley -->
+						<img src="sprite.svg#trolley" class="svg-trolley-dims" alt="trolley"/>
+						
+					</div>
+					<h2>trolley</h2>
+				</li>
+				<li title="twitter">
+					<div class="icon-box">
+						
+						<!-- twitter -->
+						<img src="sprite.svg#twitter" class="svg-twitter-dims" alt="twitter"/>
+						
+					</div>
+					<h2>twitter</h2>
+				</li>
+				<li title="user">
+					<div class="icon-box">
+						
+						<!-- user -->
+						<img src="sprite.svg#user" class="svg-user-dims" alt="user"/>
+						
+					</div>
+					<h2>user</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Sun, 10 Sep 2017 12:56:13 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
