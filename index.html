@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>Title</title>
+  <title>Беговел</title>
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,8 +24,8 @@
     <!-- ==================================================-->
     <!-- Begin 'top'-->
     <section class="top" id="top">
-      <div class="wrapper row middle-md">
-        <div class="col-md-7">
+      <div class="wrapper row middle-xs">
+        <div class="col-lg-7 col-md-8 col-sm-8">
           <nav class="top__menu top-menu">
             <ul class="top-menu__list">
               <li class="top-menu__item"><a class="top-menu__link top-menu__link--active" href="#">Главная</a></li>
@@ -37,8 +37,8 @@
             </ul>
           </nav>
         </div>
-        <div class="col-md-3 col-md-offset-2">
-          <div class="top__user user row end-md middle-md">
+        <div class="col-lg-3 col-lg-offset-2 col-md-3 col-md-offset-1 col-sm-4">
+          <div class="top__user user row end-xs middle-xs">
             <svg class="symbol-lock" width="10" height="15">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
             </svg><a class="user__login" href=""><span>Войти</span></a>
@@ -55,7 +55,7 @@
     <!-- Begin 'header'-->
     <section class="header" id="header">
       <div class="wrapper row middle-md between-xs">
-        <div class="col-lg-3 col-md-6 col-xs-6">
+        <div class="col-lg-3 col-md-6 col-xs-12 row start-lg center-xs">
           <div class="header__logo logo">
             <h1 class="logo__title">Begovel</h1>
             <p class="logo__slogan">Гипермаркет развлечений</p>
@@ -64,7 +64,7 @@
             </svg>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-xs-6">
+        <div class="col-lg-3 col-md-6 col-xs-12 row start-lg center-xs">
           <div class="header__search search">
             <input class="search__input" type="text" placeholder="Поиск" name="search" id="search">
             <svg class="symbol-search search__icon" width="34" height="35">
@@ -72,7 +72,7 @@
             </svg>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-xs-6">
+        <div class="col-lg-3 col-md-6 col-xs-12 row end-lg center-xs">
           <div class="header__callback callback">
             <div class="callback__img">
               <svg class="symbol-phone" width="37" height="35">
@@ -83,7 +83,7 @@
             <button class="callback__btn btn">Заказать звонок</button>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-xs-6">
+        <div class="col-lg-3 col-md-6 col-xs-12 row end-lg center-xs">
           <div class="header__cart cart">
             <div class="cart__img">
               <svg class="symbol-trolley" width="37" height="26">
@@ -143,22 +143,24 @@
     <main class="main-content">
       <!-- Begin 'slider'-->
       <section class="slider" id="slider">
-        <div class="wrapper">
-          <div class="row">
-            <div class="col-md-9 col-sm-12">
-              <div class="slider__holder">
-                <div class="owl-carousel">
-                  <div class="slider__item"><img src="img/slide-big.jpg" alt="slide"></div>
-                  <div class="slider__item"><img src="img/slide-thumb2.jpg" alt="slide"></div>
-                </div><img class="slider__descr" src="img/desc.png" alt="Sale 50%"><img class="slider__kids" src="img/kids.png" alt="Kids">
-              </div>
+        <div class="wrapper row">
+          <div class="col-md-9 col-sm-12">
+            <div class="slider__holder">
+              <div class="owl-carousel">
+                <div class="slider__item">
+                  <div class="slider__img" style="background-image: url(img/slide-big.jpg);"></div>
+                </div>
+                <div class="slider__item">
+                  <div class="slider__img" style="background-image: url(img/slide-thumb2.jpg);"></div>
+                </div>
+              </div><img class="slider__descr" src="img/desc.png" alt="Sale 50%"><img class="slider__kids" src="img/kids.png" alt="Kids">
             </div>
-            <div class="col-md-3 col-sm-12">
-              <div class="slider__controll">
-                <div class="slider__thumb slider__thumb--1"><img src="img/slide-thumb1.jpg" alt="thumb"></div>
-                <div class="slider__thumb slider__thumb--2"><img src="img/slide-thumb2.jpg" alt="thumb"></div>
-                <div class="slider__thumb slider__thumb--3"><img src="img/slide-thumb3.jpg" alt="thumb"></div>
-              </div>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <div class="slider__controll">
+              <div class="slider__thumb slider__thumb--1"><img src="img/slide-thumb1.jpg" alt="thumb"></div>
+              <div class="slider__thumb slider__thumb--2"><img src="img/slide-thumb2.jpg" alt="thumb"></div>
+              <div class="slider__thumb slider__thumb--3"><img src="img/slide-thumb3.jpg" alt="thumb"></div>
             </div>
           </div>
         </div>
